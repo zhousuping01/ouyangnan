@@ -55,7 +55,7 @@ a{text-decoration: none;
     margin-left: 5vw;
 }
 .song_one{
-    height: 15vh;
+    height: 8vh;
     position: relative;
     background-color:#aad3d2;
 }
@@ -63,7 +63,7 @@ a{text-decoration: none;
 .song_one p{
     float: left;
     position: absolute;
-    top: 1.5vh;
+    top: 3vh;
 }
 
 .song_two{
@@ -79,7 +79,7 @@ a{text-decoration: none;
 .song_two p{
     float: left;
     position: absolute;
-    top: 12vh;
+    top: 9vh;
 }
 
 /*.song_three{*/
