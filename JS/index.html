@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" href="index.css"/>
+    <title></title>
+    <style>
+    </style>
+</head>
+<body>
+<div class="header clearfloat">
+    <img src="back.png" class="back" alt=""/>
+    <img src="list.png" class="list" alt=""/>
+</div>
+<div class="imgessage clearfloat">
+    <div class="head">
+        <img src="touxiang.jpg" alt=""/>
+        <div class="guanzhu clearfloat">
+            <img src="guanzhu.png" id="guanzhu" alt=""/>
+        </div>
+    </div>
+        <div class="biaoqian clearfloat">
+            <h2>标签</h2>
+            <div class="one">没钱</div>
+            <div class="two">且宅</div>
+        </div>
+</div>
+<div class="state clearfloat">
+    <div class="dividerte"><img src="fensi.png" alt=""/>
+        <h2>25</h2>
+    </div>
+    <div class="divider clearfloat">
+        <img src="love.png" alt=""/>
+        <h2>71</h2>
+    </div>
+    <div class="dividert clearfloat">
+        <img src="ren.png" alt=""/>
+        <h2>80</h2>
+    </div>
+</div>
+<div class="column clearfloat">
+    <a href="index.html"><img src="ren.png" alt=""/></a>
+    <h2>个人详情</h2>
+    <div class="hdivider clearfloat">
+        <a href="oyn_music_list.html"><img src="show.png" alt=""/></a>
+        <h2>我的歌单</h2>
+    </div>
+    <div class="hdividert clearfloat">
+        <a href="oyn_record.html"><img src="music.png" alt=""/></a>
+        <h2>进入播放页面</h2>
+</div>
+</div>
+<div class="content"></div>
+<script>
+// window.onload = function () {
+//var mobileWidth = window.innerWidth;
+// var mobileHeight = window.innerHeight;
+//document.body.style.width = mobileWidth + 'px';
+//document.body.style.height = mobileHeight + 'px';}
+    var guanzhu = document.getElementById("guanzhu");
+    var isguanzhu =true;
+    guanzhu.onclick = function () {
+        if(isguanzhu){
+            guanzhu.src = 'quxiaoguanzhu.png';
+            isguanzhu = false;}
+        else{
+            guanzhu.src = 'guanzhu.png';
+            isguanzhu = true;}};
+</script>
+</body>
+</html>

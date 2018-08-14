@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            width: 100%;
+        }
+
+        .btn, .stop{
+            width: 100px;
+            height: 30px;
+            background-color: black;
+            text-align: center;
+            line-height: 30px;
+            color: #81ffdf;
+            cursor: pointer;
+        }
+        .back, .forward{
+            width: 50px;
+            height: 30px;
+            background-color: black;
+            text-align: center;
+            line-height: 30px;
+            color: #81ffdf;
+            cursor: pointer;
+        }
+        .volume{
+            width: 200px;
+            height: 20px;
+            border: 4px black solid;
+            position: relative;
+
+        }
+        .drag{
+            width: 20px;
+            height: 20px;
+            background-color: #a4a7a8;
+            border-radius: 50%;
+            cursor: pointer;
+            position: absolute;
+            top:0;
+            left: 0;
+        }
+
+        .loop{
+            width: 30px;
+            height: 30px;
+            background-color: #a4a7a8;
+            padding: 2px;
+            box-sizing: border-box;
+        }
+        .loop img{
+            width: 100%;
+            display: block;
+        }
+
+        .progress{
+            width: 300px;
+            height: 20px;
+            border: 1px solid black;
+            box-sizing: border-box;
+            cursor: pointer;
+            margin: 30px 0;
+            margin-left: 30px;
+        }
+         .progress .increase{
+             background-color: #e69ba9;
+             height: 100%;
+             width: 0;
+             position: relative;
+         }
+        .progress .increase .bar{
+            background-color: cadetblue;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            position: absolute;
+            top: -5px;
+            right: -12px;
+
+        }
+
+    </style>
+</head>
+<body>
+<video src="1.mp4" width="600px" id="coca">您的浏览器版本较陈旧，请更新浏览器</video>
+<div id="btn" class="btn">播放</div>
+<div id="stop" class="stop">停止</div>
+<div id="back" class="back">快退</div>
+<div id="forward" class="forward">快进</div>
+<div class="volume" id="volume">
+    <div class="drag" id="drag"></div>
+</div>
+
+<div class="loop">
+    <img src="tu_1.png" alt="" id="loop"/>
+</div>
+<div class="start" id="changeTime">00:00</div>
+<div class="progress" id="progress">
+    <div class="increase" id="increase">
+        <div class="bar" id="bar"></div>
+    </div>
+</div>
+
+<div class="end" id="endTime"></div>
+
+
+<script>
+    //获取视频
+    var video = document.getElementById('coca');
+    //获取播放按钮
+    var btn = document.getElementById('btn');
+    //鼠标点击按钮事件响应
+    var stop = document.getElementById('stop');
+    var back = document.getElementById('back');
+    var forward = document.getElementById('forward');
+    var volume = document.getElementById('volume');
+    var drag = document.getElementById('drag');
+    var loop = document.getElementById('loop');
+    var endTime = document.getElementById('endTime');
+    var changeTime = document.getElementById('changeTime');
+    var progress = document.getElementById('progress');
+    var increase = document.getElementById('increase');
+    video.volume = 0.5;
+    drag.style.left = (volume.clientWidth/2) - (drag.offsetWidth/2) + 'px';
+
+    var display = true;//播放变量初始化为true
+
+    btn.onclick = function () {
+        //判断变量，true播放
+        if(display){
+            video.play();
+            //修改标签的内容
+            btn.innerHTML = "暂停";
+            //将变量重新赋值为false
+            display = false;}
+        else{
+            video.pause();
+            btn.innerHTML = "播放";
+            //再次将变量赋值为true
+            display = true;}};
+
+        stop.onclick = function(){
+            //alert(video.currentTime);
+            //将当前视频播放时间归零
+            video.currentTime = 0;
+            //视频停止播放
+            video.pause();
+            //将btn的文字标签改为播放
+            btn.innerHTML ="播放";
+            //播放变量初始化为播放状态
+            display = true;
+        };
+
+        back.onclick = function()
+        { //退回两秒
+            video.currentTime -= 2;
+
+        };
+        forward.onclick = function()
+        {//前进两秒
+            video.currentTime += 2;
+        };
+
+
+    //获取鼠标的位置，赋予给圆球
+        drag.onmousedown = function(e){
+            //IE浏览器看到的是后边，非IE浏览器看的是前面
+            var ev = e || window.event;
+            //获取鼠标的x坐标位置
+            console.log(ev.clientX);
+            //鼠标在浏览器上的位置减去浏览器离左边的margin+border的值为一个固定值
+            var constant = ev.clientX - this.offsetLeft;
+            //获取鼠标移动的值
+            document.onmousemove = function(e){
+                var ev = e || window.event;
+                var changeLeft = ev.clientX - constant;
+                //包括内外边距不包括边框
+                var maxLeft = volume.clientWidth - drag.offsetWidth;
+                if(changeLeft > maxLeft){
+                    changeLeft = maxLeft;
+                }else if(changeLeft < 0){
+                    changeLeft = 0;
+                }
+                drag.style.left = changeLeft + 'px';
+                //取值0-1
+                video.volume = drag.offsetLeft / maxLeft;
+            };
+            document.onmouseup = function(){
+            this.onmousemove = null;
+            this.onmouseup = null;
+            };
+            return false;
+        };
+
+     var isloop = true;
+    loop.onclick = function(){
+        if (isloop){
+            video.loop = true;
+            loop.src ='tu_2.png';
+                video.volume=0;
+            isloop = false;
+    }
+    else{video.loop = false;
+        loop.src='tu_1.png';
+            video.volume=1;
+        isloop = true;
+    }};
+    //
+    function toTime(t){
+        var minutes = parseInt(t / 60,10);
+        var seconds = parseInt(t % 60,10);
+        if(minutes<10){
+            minutes = '0'+minutes;
+        }
+        if(seconds<10){
+            seconds = '0'+seconds;}
+        return minutes + ':' + seconds;
+    }
+    //一次性定时器
+    var waitTime = setTimeout(function(){
+        //readyState
+        //0 没有视频信息
+        //1 元数据
+        //2 当前位置可用
+        //3下一帧可以看
+        //4 都可以看了
+        if(video.readyState>2)
+        //duration视频总时长
+        {endTime.innerHTML = toTime(video.duration);
+            //清除定时器
+            clearInterval(waitTime);
+        }
+    },100);
+
+    video.addEventListener('timeupdate',function(){
+        changeTime.innerHTML = toTime(video.currentTime);
+        increase.style.width = (video.currentTime/video.duration)*100 + '%';
+    });
+
+progress.onclick = function(e){
+    var ev = e || window.event;
+    increase.style.width=(ev.clientX - progress.offsetLeft) / progress.clientWidth * 100 +'%';
+    video.currentTime = video.duration * ((ev.clientX - progress.offsetLeft) / progress.clientWidth);
+}
+</script>
+</body>
+</html>

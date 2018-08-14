@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "Microsoft Yahei";
+        }
+
+        html, body {
+            width: 100%;
+
+        }
+    </style>
+    <link rel="stylesheet" href="oyn_record.css"/>
+</head>
+<body>
+<audio src="victory.mp3" id="music"></audio>
+<div class="header clearfloat" id="header">
+    <a href="index.html"><img src="back.png" alt=""/></a>
+    <div class="song_name clearfloat" id="song_name"><h4>A·I·Y</h4>
+        <a href="oyn_music_list.html"><div class="list clearfloat" id="list"><img src="list.png" alt=""/></div></a>
+    </div>
+</div>
+<div class="control clearfloat" id="control">
+    <img src="voice.png" class="voice" id="voice" alt=""/>
+    <div class="volume_control" id="volume_control">
+        <div class="ball" id="ball"></div>
+    </div>
+</div>
+<div class="record">
+    <img src="Sm9DaGgwRTNTTk96bmoySzZ3RDQ0b0xyV3B3VXJyOVNiZ1FZdmtyRmt0akhSTnA3QXlGWUN3PT0.jpg" alt=""/>
+</div>
+
+<div class="startTime clearfloat" id="startTime">00:00</div>
+<div class="progress_bar clearfloat" id="progress_bar">
+    <div class="progress_bar_increase clearfloat" id="progress_bar_increase">
+    </div>
+</div>
+<div class="endTime clearfloat" id="endTime">
+</div>
+
+<div class="console clearfloat" id="console">
+    <img src="kuaitui.png" class="back" id="back" alt=""/>
+    <img src="shangyishouge.png" class="shangyishouge" id="shangyishouge" alt=""/>
+    <img src="play.png" class="play" id="play" alt=""/>
+    <img src="xiayishouge.png" class="xiayishouge" id="xiayishouge" alt=""/>
+    <img src="kuaijin.png" class="forward" id="forward" alt=""/>
+    <img src="circular.png" id="circular" class="circular" alt=""/>
+    <img src="shoucang.png" id="shoucang" class="shoucang" alt=""/>
+    <a href="victory.mp3"><img src="download.png" id="download" class="download" alt=""/></a>
+</div>
+<script>
+    var audio = document.getElementById('music');
+    var play = document.getElementById('play');
+    var back = document.getElementById('back');
+    var forward = document.getElementById('forward');
+    var volume_control = document.getElementById('volume_control');
+    var ball = document.getElementById('ball');
+    var voice = document.getElementById('voice');
+    var startTime = document.getElementById('startTime');
+    var progress_bar = document.getElementById('progress_bar');
+    var progress_bar_increase = document.getElementById('progress_bar_increase');
+    var shangyishouge = document.getElementById('shangyishouge');
+    var xiayishouge = document.getElementById('xiayishouge');
+    var shoucang = document.getElementById('shoucang');
+    var circular = document.getElementById('circular');
+    var display =true;
+    audio.volume_control = 0.5;
+    ball.style.left = (volume_control.clientWidth/2) - (ball.offsetLeft/2) + 'px';
+
+
+//    播放按钮事件
+    play.onclick = function () {
+        if(display){
+            audio.play();
+            play.src = 'stop.png';
+            display = false;}
+        else{
+            audio.pause();
+            play.src = 'play.png';
+            display = true;}};
+
+
+    //快退事件 浏览器问题
+         back.onclick = function(){
+            audio.currentTime -= 2;
+             };
+
+    //快进事件 浏览器问题
+    forward.onclick = function(){
+        audio.currentTime += 2;};
+
+//    音量控制 手机模拟错误，电脑可以，浏览器问题
+    ball.onmousedown = function(e){
+        var ev = e || window.event;
+        console.log(ev.clientX);
+        var constant = ev.clientX - this.offsetLeft;
+        document.onmousemove = function(e){
+            var ev = e || window.event;
+            var changeLeft = ev.clientX - constant;
+            var maxLeft = volume_control.clientWidth - ball.offsetWidth;
+            if(changeLeft > maxLeft){
+                changeLeft = maxLeft;
+            }else if(changeLeft < 0){
+                changeLeft = 0;
+            }
+            ball.style.left = changeLeft + 'px';
+            audio.volume = ball.offsetLeft / maxLeft;
+        };
+        document.onmouseup = function(){
+            this.onmousemove = null;
+            this.onmouseup = null;
+        };
+        return false;
+    };
+
+    //    静音控制 暂无错误
+    var isvoice = true;
+    voice.onclick = function(){
+        if (isvoice){
+            audio.muted = true;
+            voice.src ='novoice.png';
+            isvoice = false;
+        }
+        else{audio.muted = false;
+            voice.src='voice.png';
+            isvoice = true;
+        }};
+
+
+    function toTime(t){
+        var minutes = parseInt(t / 60,10);
+        var seconds = parseInt(t % 60,10);
+        if(minutes<10){
+            minutes = '0'+minutes;
+        }
+        if(seconds<10){
+            seconds = '0'+seconds;}
+        return minutes + ':' + seconds;
+    }
+
+
+    //    时间控制
+    var waitTime = setTimeout(function(){
+        if(audio.readyState>2)
+        {endTime.innerHTML = toTime(audio.duration);
+            clearInterval(waitTime);
+        }
+    },100);
+
+    //    进度条显示，球不动
+    audio.addEventListener('timeupdate',function(){
+        startTime.innerHTML = toTime(audio.currentTime);
+        progress_bar_increase.style.width = (audio.currentTime/audio.duration)*100 + '%';
+    });
+    //    进度条控制 浏览器的问题
+    progress_bar.onclick = function(e){
+        var ev = e || window.event;
+        progress_bar_increase.style.width=(ev.clientX - progress_bar.offsetLeft) / progress_bar.clientWidth * 100 +'%';
+        audio.currentTime = audio.duration * ((ev.clientX - progress_bar.offsetLeft) / progress_bar.clientWidth);
+    };
+
+//    切歌
+    xiayishouge.onclick = function(){
+        progress_bar_increase.style.width = 0;
+        audio.src= 'hotel.mp3';
+        audio.autoplay ="autoplay";
+        var waitTime = setTimeout(function(){
+            if(audio.readyState>2)
+            {endTime.innerHTML = toTime(audio.duration);
+                clearInterval(waitTime);
+            }
+        },100);
+    };
+
+    shangyishouge.onclick = function(){
+        progress_bar_increase.style.width = 0;
+        audio.src = 'victory.mp3';
+        audio.autoplay ="autoplay";
+        var waitTime = setTimeout(function(){
+            if(audio.readyState>2)
+            {endTime.innerHTML = toTime(audio.duration);
+                clearInterval(waitTime);
+            }
+        },100);
+    };
+
+    //收藏事件
+    var isshoucang = true;
+    shoucang.onclick =function(){
+        if (isshoucang){
+            shoucang.src='noshoucang.png';
+            isshoucang = false;
+        }
+        else{
+            shoucang.src='shoucang.png';
+            isshoucang = true;
+        }};
+
+    //循环事件
+    var iscircular =true;
+    circular.onclick = function(){
+        if(iscircular){
+            circular.src='onlycircular.png';
+                audio.loop='loop';
+            iscircular =false;
+            } else{circular.src='circular.png';
+                    iscircular = true;}};
+
+
+
+</script>       
+
+</body>
+</html>

@@ -1,0 +1,150 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+a{text-decoration: none;
+       color: #000000;
+}
+.wai{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+.line_one{
+    width: 99%;
+    height: 20vh;
+    border: 2px dashed #a4a7a8;
+    background-image: url("Sm9DaGgwRTNTTk96bmoySzZ3RDQ0b0xyV3B3VXJyOVNiZ1FZdmtyRmt0akhSTnA3QXlGWUN3PT0.jpg");
+    background-size: 99% 20vh;
+}
+
+.fg{
+    float: left;
+    width: 99%;
+    border: 1px dashed #a4a7a8;
+}
+.line_three{
+    height: 10vh;
+    background-color: #aad3d2;
+}
+
+.line_three img{
+    float: left;
+    height: 4vh;
+    width: 8vw;
+    margin-top: 5vh;
+    margin-left: 10vw;
+}
+
+.bgm{
+    float: left;
+    margin-top: 5vh;
+    margin-left: 5vw;
+}
+.bfqb{
+    float: left;
+    margin-top: 6vh;
+    margin-left: 5vw;
+}
+.scgd{
+    float: left;
+    margin-top: 6vh;
+    margin-left: 5vw;
+}
+.song_one{
+    height: 6vh;
+    position: relative;
+    background-color:#aad3d2;
+}
+
+.gedan p{
+    float: left;
+}
+
+.song_two{
+     height: 6vh;
+     position: relative;
+     background-image: linear-gradient(180deg, #aad3d2, #ffffff);
+ }
+.song_two h4{
+    padding-top: 2vh;
+
+}
+
+.song_three{
+    height: 6vh;
+    margin-top: 2vh;
+    position: relative;
+}
+.song_three img{
+    width: 2vw;
+    height: 2vw;
+    margin-top: 1vh;
+}
+
+/*.song_three h4{*/
+    /*padding-top: 2vh;*/
+
+/*}*/
+/*.song_four{*/
+    /*height: 6vh;*/
+    /*margin-top: 2vh;*/
+    /*position: relative;*/
+/*}*/
+
+/*.song_four h4{*/
+    /*padding-top: 2vh;*/
+/*}*/
+.xiaobofang{
+    float: left;
+    border: 2px dashed #a4a7a8;
+    width: 99%;
+    height: 17.5vh;
+    margin-top: 35vh;
+    background-color: #aad3d2;
+}
+
+.xiaobofang img{
+    float: left;
+    width: 40%;
+    height: 17.5vh;
+}
+
+.xiaobofang .divider{
+    float: left;
+    width: 0.01vw;
+    height: 16.5vh;
+    border: 2px dashed #a4a7a8;
+}
+
+.xiaobofang h3{
+    float: left;
+    margin-left: 10vw;
+    margin-top: 4vh;
+}
+.xiaobofang h5{
+    float: left;
+    margin-left: -20vw;
+    margin-top: 6vh;
+}
+.xiaobofang .xiaoplay{
+    float: left;
+    height: 7vh;
+    width: 14vw;
+    margin-left: 4vw;
+    margin-top: 2vw;
+}
+
+.clearFloat:after {
+    content: "";
+    height: 0;
+    display: block;
+    visibility: hidden;
+    clear: both;
+}
+.clearFloat {
+    zoom: 1;
+}

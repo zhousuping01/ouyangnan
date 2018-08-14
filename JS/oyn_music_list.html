@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title></title>
+    <link rel="stylesheet" href="oyn_music_list.css"/>
+</head>
+<body>
+<div class="wai">
+    <audio src="victory.mp3" id="audio"></audio>
+    <div class="line_one clearFloat" >
+    </div>
+    <div class="line_three clearFloat">
+        <div class="bgm"><h3>A·I·Y</h3></div>
+        <img src="play.png" class="play" id="play" alt=""/>
+        <a href="oyn_record.html"><div class="bfqb">播放全部</div></a>
+        <img src="guanzhu.png" class="guanzhu" id="guanzhu" alt=""/>
+        <div class="scgd">收藏歌单</div>
+        <div class="fg clearFloat"></div>
+    </div>
+
+    <div class="gedan">
+        <div class="song_one clearFloat">
+            <a href="oyn_record.html"><h4>1.胜利之声</h4></a>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;祖坚正慶</p>
+        </div>
+        <div class="song_two clearFloat">
+            <a href="oyn_record.html"><h4>2.旅宿之处</h4></a>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;祖坚正慶</p>
+        </div>
+        <!--<div class="song_three clearFloat">-->
+            <!--<h4>3.月迷风影</h4>-->
+            <!--&nbsp;&nbsp;&nbsp;&nbsp;有坂美香</div>-->
+        <!--<div class="song_four clearFloat">-->
+        <!--<h4>4.一刀缭乱</h4>-->
+        <!--<p>&nbsp;&nbsp;&nbsp;&nbsp;六花</p>-->
+        <!--</div>-->
+</div>
+    <div class="xiaobofang clearFloat">
+        <img src="Sm9DaGgwRTNTTk96bmoySzZ3RDQ0b0xyV3B3VXJyOVNiZ1FZdmtyRmt0akhSTnA3QXlGWUN3PT0.jpg" alt=""/>
+        <div class="divider"></div>
+        <h3>胜利之声</h3><br>
+        <h5>祖坚正慶</h5>
+        <img src="play.png" id="xiaoplay" class="xiaoplay" alt=""/>
+    </div>
+    </div>
+<script>
+    window.onload = function () {
+        var mobileWidth = window.innerWidth;
+        var mobileHeight = window.innerHeight;
+        document.body.style.width = mobileWidth + 'px';
+        document.body.style.height = mobileHeight + 'px';}
+    var audio = document.getElementById("audio");
+    var guanzhu =document.getElementById("guanzhu");
+    var xiaoplay =document.getElementById("xiaoplay");
+    var isplay =true;
+    var isguanzhu =true;
+    xiaoplay.onclick = function () {
+        if(isplay){
+            audio.play();
+            xiaoplay.src = 'stop.png';
+            isplay = false;}
+        else{
+            audio.pause();
+            xiaoplay.src = 'play.png';
+            isplay = true;}};
+    guanzhu.onclick = function () {
+        if(isguanzhu){
+            guanzhu.src = 'quxiaoguanzhu.png';
+            isguanzhu = false;}
+        else{
+            guanzhu.src = 'guanzhu.png';
+            isguanzhu = true;}};
+</script>
+</body>
+</html>

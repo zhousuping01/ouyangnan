@@ -1,0 +1,208 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    width: 100%;
+}
+
+.clearfloat:after {
+    content: "";
+    height: 0;
+    display: block;
+    visibility: hidden;
+    clear: both;
+}
+
+.clearfloat {
+    zoom: 1;
+}
+
+.header {
+    border: 2px solid black;
+    width: 99%;
+    height: 8vw;
+    background-color: #a4a7a8;
+}
+
+.header img {
+    float: left;
+    height: 4vh;
+    margin: 0 auto;
+    margin-top: 0.2vh;
+}
+
+.header .list {
+    margin-left: 82vw;
+}
+
+.imgessage .head img{
+    border-radius: 50%;
+    width: 40vw;
+    height: 20vh;
+    float: left;
+    margin-top: 4.5vh;
+    margin-left: 30vw;
+}
+
+.imgessage .head .guanzhu img{
+    float: left;
+    margin-top: 10vh;
+    margin-left: 4vw;
+    width: 15vw;
+    height: 9vh;
+}
+
+.biaoqian h2 {
+    float: left;
+    margin-top: 2vh;
+    margin-left: 6vw;
+}
+.biaoqian .one {
+    float: left;
+    width: 14vw;
+    height: 3vh;
+    border: 2px solid black;
+    margin-top: 2.8vh;
+    margin-left: 15vw;
+    text-align: center;
+}
+
+.biaoqian .two {
+    float: right;
+    width: 14vw;
+    height: 3vh;
+    border: 2px solid black;
+    margin-top: 2.8vh;
+    margin-right: 22vw;
+    text-align: center;
+}
+
+.state {
+    float: left;
+    border: 2px dashed #a4a7a8;
+    width: 99%;
+    height: 10vh;
+}
+
+.state .divider {
+    float: left;
+    border: 2px dashed #a4a7a8;
+    width: 0.1vw;
+    height: 9.5vh;
+    margin-left: 8%;
+}
+
+.state .dividert {
+    float: left;
+    border: 2px dashed #a4a7a8;
+    width: 0.01vw;
+    height: 9.5vh;
+    margin-left: 35%;
+}
+
+.state img {
+    float: left;
+    margin-top: 1vh;
+    margin-left: 1vw;
+    height: 8vh;
+}
+
+.divider img {
+    margin-left: 3vw;
+    height: 6.5vh;
+}
+
+.dividert img {
+    height: 7vh;
+}
+
+.state .dividerte h2 {
+    float: left;
+    margin-top: 2.5vh;
+    margin-left: 2vw;
+}
+
+.state .divider h2 {
+    float: left;
+    margin-top: -5.5vh;
+    margin-left: 19vw;
+}
+
+.state .dividert h2 {
+    float: left;
+    margin-top: -5.5vh;
+    margin-left: 16vw;
+}
+
+.column img {
+    float: left;
+    height: 8vh;
+    margin-left: 15vw;
+    margin-top: 2vh;
+}
+
+.column .hdivider img {
+    float: left;
+    width: 80%;
+    height: 40vh;
+    margin-left: 10vw;
+    margin-top: -4vh;
+}
+
+.column {
+    float: left;
+    width: 99%;
+    height: 48.5vh;
+    border: 2px dashed #a4a7a8;
+    margin-top: 2vh;
+    background: rgba(10, 34, 9, 0.125);
+    background-image: url("beijing.png");
+    background-size: 99.5% 49vh;
+}
+
+.column .hdivider {
+    width: 99%;
+    height: 0.025vh;
+    border: 2px dashed #a4a7a8;
+    margin-top: 20%;
+}
+
+
+.column h2 {
+    float: left;
+    margin-left: 7vw;
+    margin-top: 4vh;
+}
+
+.column .hdividert {
+    width: 99%;
+    height: 0.0125vh;
+    border: 2px dashed #a4a7a8;
+    margin-top: 30%;
+}
+
+.column .hdividert h2{
+    float: left;
+    margin-left: -1vw;
+}
+.column .hdividert img{
+    float: left;
+    height: 10vh;
+    width: 18vw;
+    margin-left: 13vw;
+}
+
+.column .hdivider img{
+    float: right;
+    width: 14vw;
+    height: 8vh;
+    margin-right: 12vw;
+    margin-top: 6.5vh;
+}
+.column .hdivider h2 {
+    float: left;
+    margin-left: 36vw;
+    margin-top: 8vh;
+}

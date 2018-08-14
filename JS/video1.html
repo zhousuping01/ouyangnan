@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            width: 100%;
+        }
+
+        .btn,.stop {
+            width: 100px;
+            height: 30px;
+            background-color: #a4a7a8;
+            text-align: center;
+            line-height: 30px;
+            color: #81ffdf;
+            border-radius: 50%;
+        }
+
+        .back,.forward {
+            width: 50px;
+            height: 30px;
+            background-color: #a4a7a8;
+            text-align: center;
+            line-height: 30px;
+            color: #81ffdf;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+<video src="1.mp4" width="600px" id="coca">您的浏览器版本较陈旧，请更新浏览器</video>
+<div id="btn" class="btn">播放</div>
+<div id="stop" class="stop">停止</div>
+<div id="back" class="back">快退</div>
+<div id="forward" class="forward">快进</div>
+
+<script>
+    var video = document.getElementById('coca');
+    var btn = document.getElementById('btn');
+    var stop = document.getElementById('stop');
+    var back = document.getElementById('back');
+    var forward = document.getElementById('forward');
+    var display = true;
+    btn.onclick = function() {
+        if(display){
+      video.play();
+        btn.innerHTML="暂停";
+        display=false;
+    }else{
+        video.pause();
+        btn.innerHTML="播放";
+        display=true;
+    }
+    }
+
+        stop.onclick = function(){
+            video.currentTime = 0;
+            video.pause();
+            btn.innerHTML='播放';
+            display=true;
+        }
+        back.onclick=function(){
+            video.currentTime -=1.5;
+        }
+        forward.onclick=function(){
+            video.currentTime +=1.5;
+        }
+
+</script>
+</body>
+</html>
