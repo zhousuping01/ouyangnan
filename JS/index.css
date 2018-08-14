@@ -154,56 +154,35 @@ html, body {
 
 .column {
     float: left;
-    width: 99%;
-    height: 40vh;
-    border: 2px dashed #a4a7a8;
+    width: 100vw;
+    height: 42vh;
     margin-top: 2vh;
     background: rgba(10, 34, 9, 0.125);
     background-image: url("beijing.png");
-    background-size: 99.5% 49vh;
+    background-size: 100vw 50vh;
+    /*overflow: hidden;*/
+
 }
 
 .column .hdivider {
-    width: 99%;
-    height: 0.025vh;
-    border: 2px dashed #a4a7a8;
-    margin-top: 20%;
+    border: 0.5vw dashed #a4a7a8;
+    padding: 5vw 0;
+    box-sizing: border-box;
+    text-align: center;
 }
-
-
-.column h2 {
-    float: left;
-    margin-left: 7vw;
-    margin-top: 4vh;
-}
-
-.column .hdividert {
-    width: 99%;
-    height: 0.0125vh;
-    border: 2px dashed #a4a7a8;
-    margin-top: 30%;
-}
-
-.column .hdividert h2{
-    float: left;
-    margin-left: -1vw;
-}
-.column .hdividert img{
-    float: left;
-    height: 10vh;
-    width: 18vw;
-    margin-left: 13vw;
-}
-
+.column .hdivider .aa{
+     width: 50%;
+     height: 8vh;
+     float: left;
+     position: relative;
+     line-height: 8vh;
+ }
 .column .hdivider img{
-    float: right;
     width: 14vw;
     height: 8vh;
-    margin-right: 12vw;
-    margin-top: 6.5vh;
-}
-.column .hdivider h2 {
-    float: left;
-    margin-left: 36vw;
-    margin-top: 8vh;
+    position: absolute;
+    top: 50%;
+    margin-top: -4vh;
+    left: 50%;
+    margin-left:-7vw ;
 }
