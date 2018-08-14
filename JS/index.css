@@ -186,8 +186,8 @@ html, body {
 
 .column .hdividert h2{
     float: left;
-    margin-left: 20vw;
-    margin-top:-24vh;
+    margin-left: 7vw;
+    margin-top:-4vh;
 }
 .column .hdividert img{
     float: left;
@@ -205,6 +205,6 @@ html, body {
 }
 .column .hdivider h2 {
     float: left;
-    margin-left: 36vw;
-    margin-top: 8vh;
+    margin-left: 7vw;
+    margin-top: 4vh;
 }
