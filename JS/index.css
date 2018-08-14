@@ -197,7 +197,7 @@ html, body {
 }
 
 .column .hdivider img{
-    float: right;
+    float: left;
     width: 14vw;
     height: 8vh;
     margin-right: 12vw;
