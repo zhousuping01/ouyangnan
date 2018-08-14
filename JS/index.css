@@ -63,7 +63,7 @@ html, body {
 .biaoqian .one {
     float: left;
     width: 14vw;
-    height: 3vh;
+    height: 5vh;
     border: 2px solid black;
     margin-top: 2.8vh;
     margin-left: 15vw;
@@ -73,7 +73,7 @@ html, body {
 .biaoqian .two {
     float: left;
     width: 14vw;
-    height: 3vh;
+    height: 5vh;
     border: 2px solid black;
     margin-top: 2.8vh;
     margin-left: 8vw;
