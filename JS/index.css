@@ -206,5 +206,5 @@ html, body {
 .column .hdivider h2 {
     float: left;
     margin-left: 7vw;
-    margin-top: 2vh;
+    margin-top: -1vh;
 }
