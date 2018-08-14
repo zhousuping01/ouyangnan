@@ -55,7 +55,7 @@ a{text-decoration: none;
     margin-left: 5vw;
 }
 .song_one{
-    height: 14vh;
+    height: 15vh;
     position: relative;
     background-color:#aad3d2;
 }
@@ -63,7 +63,7 @@ a{text-decoration: none;
 .song_one p{
     float: left;
     position: absolute;
-    top: 4vh;
+    top: 6vh;
 }
 
 .song_two{
