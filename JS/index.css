@@ -67,7 +67,7 @@ html, body {
     border: 2px solid black;
     margin-top: 2.8vh;
     margin-left: 15vw;
-    text-align: center;
+    line-height:3vh;
 }
 
 .biaoqian .two {
@@ -77,7 +77,7 @@ html, body {
     border: 2px solid black;
     margin-top: 2.8vh;
     margin-left: 8vw;
-    text-align: center;
+    line-height:3vh;
 }
 
 .state {
