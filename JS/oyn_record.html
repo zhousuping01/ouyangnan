@@ -71,7 +71,7 @@
     var shoucang = document.getElementById('shoucang');
     var circular = document.getElementById('circular');
     var display =true;
-    audio.volume_control = 0.5;
+    audio.volume= 0.5;
     ball.style.left = (volume_control.clientWidth/2) - (ball.offsetLeft/2) + 'px';
 
 
@@ -97,29 +97,37 @@
         audio.currentTime += 2;};
 
 //    音量控制 手机模拟错误，电脑可以，浏览器问题
-    ball.onmousedown = function(e){
-        var ev = e || window.event;
-        console.log(ev.clientX);
-        var constant = ev.clientX - this.offsetLeft;
-        document.onmousemove = function(e){
-            var ev = e || window.event;
-            var changeLeft = ev.clientX - constant;
-            var maxLeft = volume_control.clientWidth - ball.offsetWidth;
-            if(changeLeft > maxLeft){
-                changeLeft = maxLeft;
-            }else if(changeLeft < 0){
-                changeLeft = 0;
-            }
-            ball.style.left = changeLeft + 'px';
-            audio.volume = ball.offsetLeft / maxLeft;
-        };
-        document.onmouseup = function(){
-            this.onmousemove = null;
-            this.onmouseup = null;
-        };
-        return false;
+//    ball.onmousedown = function(e){
+//        var ev = e || window.event;
+//        console.log(ev.clientX);
+//        var constant = ev.clientX - this.offsetLeft;
+//        document.onmousemove = function(e){
+//            var ev = e || window.event;
+//            var changeLeft = ev.clientX - constant;
+//            var maxLeft = volume_control.clientWidth - ball.offsetWidth;
+//            if(changeLeft > maxLeft){
+//                changeLeft = maxLeft;
+//            }else if(changeLeft < 0){
+//                changeLeft = 0;
+//            }
+//            ball.style.left = changeLeft + 'px';
+//            audio.volume = ball.offsetLeft / maxLeft;
+//        };
+//        document.onmouseup = function(){
+//            this.onmousemove = null;
+//            this.onmouseup = null;
+//        };
+//        return false;
+//    };
+    volume_control.onclick = function(e){
+        var ev = e||window.event;
+        var cont = ev.clientX - this.offsetLeft;
+        var allwidth = volume_control.clientWidth;
+        if(cont<=allwidth){
+            audio.volume = (cont/allwidth);
+            ball.style.left = cont + "px";
+        }
     };
-
     //    静音控制 暂无错误
     var isvoice = true;
     voice.onclick = function(){
