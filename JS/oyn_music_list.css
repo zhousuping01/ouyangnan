@@ -60,9 +60,10 @@ a{text-decoration: none;
     background-color:#aad3d2;
 }
 
-.gedan p{
+.song_one p{
     float: left;
     position: absolute;
+    top: 3vh;
 }
 
 .song_two{
