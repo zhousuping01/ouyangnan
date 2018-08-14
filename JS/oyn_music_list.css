@@ -62,6 +62,7 @@ a{text-decoration: none;
 
 .gedan p{
     float: left;
+    position: absolute;
 }
 
 .song_two{
