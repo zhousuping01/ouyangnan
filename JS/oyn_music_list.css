@@ -70,20 +70,19 @@ a{text-decoration: none;
      background-image: linear-gradient(180deg, #aad3d2, #ffffff);
  }
 .song_two h4{
-    padding-top: 2vh;
-
+    padding-top: 4vh;
 }
 
-.song_three{
-    height: 6vh;
-    margin-top: 2vh;
-    position: relative;
-}
-.song_three img{
-    width: 2vw;
-    height: 2vw;
-    margin-top: 1vh;
-}
+/*.song_three{*/
+    /*height: 6vh;*/
+    /*margin-top: 2vh;*/
+    /*position: relative;*/
+/*}*/
+/*.song_three img{*/
+    /*width: 2vw;*/
+    /*height: 2vw;*/
+    /*margin-top: 1vh;*/
+/*}*/
 
 /*.song_three h4{*/
     /*padding-top: 2vh;*/
