@@ -200,11 +200,11 @@ html, body {
     float: left;
     width: 14vw;
     height: 8vh;
-    margin-left: 12vw;
+    margin-left: 14vw;
     margin-top: 6.5vh;
 }
 .column .hdivider h2 {
     float: left;
     margin-left: 7vw;
-    margin-top: -8vh;
+    margin-top: 10vh;
 }
