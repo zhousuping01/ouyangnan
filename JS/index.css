@@ -63,22 +63,13 @@ html, body {
 .biaoqian .one {
     float: left;
     width: 14vw;
-    height: 5vh;
+    height: 4vh;
     border: 2px solid black;
-    margin-top: 1.8vh;
+    margin-top: 0.8vh;
     margin-left: 15vw;
-    line-height:5vh;
-    text-align: center;
+    line-height:4vh;
 }
-
-.biaoqian .two {
-    float: left;
-    width: 14vw;
-    height: 5vh;
-    border: 2px solid black;
-    margin-top: 1.8vh;
-    margin-left: 8vw;
-    line-height:5vh;
+.biaoqian .one p{
     text-align: center;
 }
 
@@ -157,11 +148,11 @@ html, body {
 .column {
     float: left;
     width: 100vw;
-    height: 42vh;
+    height: 42.5vh;
     margin-top: 2vh;
     background: rgba(10, 34, 9, 0.125);
     background-image: url("beijing.png");
-    background-size: 100vw 50vh;
+    background-size: 99vw 42vh;
     /*overflow: hidden;*/
 
 }
