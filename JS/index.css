@@ -39,7 +39,7 @@ html, body {
 
 .imgessage .head img{
     border-radius: 50%;
-    width: 40vw;
+    width: 38vw;
     height: 20vh;
     float: left;
     margin-top: 4.5vh;
@@ -56,7 +56,7 @@ html, body {
 
 .biaoqian h2 {
     float: left;
-    margin-top:2vh;
+    margin-top: 0.5vh;
     margin-left: 6vw;
     text-align: center;
 }
@@ -152,7 +152,7 @@ html, body {
     margin-top: 2vh;
     background: rgba(10, 34, 9, 0.125);
     background-image: url("beijing.png");
-    background-size: 99vw 42vh;
+    background-size: 99vw 42.5vh;
     /*overflow: hidden;*/
 
 }
@@ -179,3 +179,41 @@ html, body {
     left: 50%;
     margin-left:-7vw ;
 }
+
+
+
+/*.column h2 {*/
+    /*float: left;*/
+    /*margin-left: 7vw;*/
+    /*margin-top: 4vh;*/
+/*}*/
+
+/*.column .hdividert {*/
+    /*width: 99vw;*/
+    /*height: 0.0125vh;*/
+    /*border: 0.5vw dashed #a4a7a8;*/
+    /*margin-top: 30%;*/
+/*}*/
+
+/*.column .hdividert h2{*/
+    /*float: left;*/
+    /*margin-left: 7vw;*/
+/*}*/
+/*.column .hdividert img{*/
+    /*float: left;*/
+    /*height: 10vh;*/
+    /*width: 18vw;*/
+    /*margin-left: 13vw;*/
+/*}*/
+
+/*.column .hdivider img{*/
+    /*float: right;*/
+    /*width: 14vw;*/
+    /*height: 8vh;*/
+    /*/!*margin-right: 12vw;*!/*/
+    /*/!*margin-top: 6.5vh;*!/*/
+/*}*/
+/*.column .hdivider h2 {*/
+    /*float: left;*/
+    /*margin-left: 36vw;*/
+/*}*/
