@@ -63,6 +63,7 @@ a{text-decoration: none;
 .song_one p{
     float: left;
     position: absolute;
+    top: 6vh;
 }
 
 .song_two{
