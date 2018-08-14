@@ -155,7 +155,7 @@ html, body {
 .column {
     float: left;
     width: 99%;
-    height: 48.5vh;
+    height: 40vh;
     border: 2px dashed #a4a7a8;
     margin-top: 2vh;
     background: rgba(10, 34, 9, 0.125);
@@ -186,25 +186,24 @@ html, body {
 
 .column .hdividert h2{
     float: left;
-    margin-left: 7vw;
-    margin-top:  -24vh;
+    margin-left: -1vw;
 }
 .column .hdividert img{
     float: left;
     height: 10vh;
     width: 18vw;
-    margin-left: 4vw;
+    margin-left: 13vw;
 }
 
 .column .hdivider img{
-    float: left;
+    float: right;
     width: 14vw;
     height: 8vh;
-    margin-left: 14vw;
+    margin-right: 12vw;
     margin-top: 6.5vh;
 }
 .column .hdivider h2 {
     float: left;
-    margin-left: 7vw;
-    margin-top: 10vh;
+    margin-left: 36vw;
+    margin-top: 8vh;
 }
