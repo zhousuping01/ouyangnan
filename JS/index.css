@@ -186,8 +186,8 @@ html, body {
 
 .column .hdividert h2{
     float: left;
-    margin-left: -1vw;
-    margin-top:-4vh;
+    margin-left: 4vw;
+    margin-top:-8vh;
 }
 .column .hdividert img{
     float: left;
